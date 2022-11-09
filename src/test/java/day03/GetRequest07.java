@@ -4,14 +4,15 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
-import utilities.GMIBankBaseUrl;
+import utilities.GMIBankBaseURL;
+
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
 
-public class GetRequest07 extends GMIBankBaseUrl {
+public class GetRequest07 extends GMIBankBaseURL {
     /*
     http://www.gmibank.com/api/tp-customers/110472 adresindeki müşteri bilgilerini doğrulayın
    “firstName”: “Melva”,
@@ -24,12 +25,12 @@ public class GetRequest07 extends GMIBankBaseUrl {
     @Test
     public void get07(){
         // Set the url
-        spec.pathParams("first","tp-customers","second",110472);
+        spec01.pathParams("first","tp-customers","second",110472);
 
         // Set the expected data
 
         // Send the request and Get the response
-        Response response = given().spec(spec).headers("Authorization","Bearer " + generateToken()).
+        Response response = given().spec(spec01).headers("Authorization","Bearer " + generateToken()).
                 when().
                 get("/{first}/{second}");
         response.prettyPrint();

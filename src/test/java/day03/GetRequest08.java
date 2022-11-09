@@ -4,14 +4,15 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-import utilities.GMIBankBaseUrl;
+import utilities.GMIBankBaseURL;
+
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class GetRequest08 extends GMIBankBaseUrl {
+public class GetRequest08 extends GMIBankBaseURL {
     /*
     http://www.gmibank.com/api/tp-customers/43703
           “firstName”: “Alda”,
@@ -28,7 +29,7 @@ public class GetRequest08 extends GMIBankBaseUrl {
     @Test
     public void get08(){
         // set the url
-        spec.pathParams("first","tp-customers", "second", "43703");
+        spec01.pathParams("first","tp-customers", "second", "43703");
 
         // set the expected data
         Map<String, Object> expectedData = new HashMap<>();
@@ -45,7 +46,7 @@ public class GetRequest08 extends GMIBankBaseUrl {
 
         // send the request and get the response
 
-        Response response = RestAssured.given().spec(spec).headers("Authorization", "Bearer " + generateToken()).
+        Response response = RestAssured.given().spec(spec01).headers("Authorization", "Bearer " + generateToken()).
                 when().
                 get("/{first}/{second}");
         response.prettyPrint();

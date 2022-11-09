@@ -65,10 +65,10 @@ public class Customer {
     private Country country;
     private String state;
     private User user;
-    private Account accounts;
 
 
-    public Customer(int id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, boolean zelleEnrolled, Country country, String state, User user, Account accounts) {
+
+    public Customer(int id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, boolean zelleEnrolled, Country country, String state, User user) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -85,7 +85,7 @@ public class Customer {
         this.country = country;
         this.state = state;
         this.user = user;
-        this.accounts = accounts;
+
 
     }
 
@@ -220,13 +220,7 @@ public class Customer {
         this.user = user;
     }
 
-    public Account getAccounts() {
-        return accounts;
-    }
 
-    public void setAccounts(Account accounts) {
-        this.accounts = accounts;
-    }
 
     @Override
     public String toString() {
@@ -247,7 +241,6 @@ public class Customer {
                 ", country=" + country +
                 ", state='" + state + '\'' +
                 ", user=" + user +
-                ", accounts=" + accounts +
-                '}';
+               '}';
     }
 }
